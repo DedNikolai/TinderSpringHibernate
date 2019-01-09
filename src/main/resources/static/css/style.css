@@ -1,0 +1,39 @@
+.login-form_container {
+    width: 300px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.login-form {
+    width: 100%;
+    height: 100vh;
+}
+
+.card-container {
+    width: 100%;
+    height: 100vh;
+}
+.card-profile {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.card-body {
+    text-align: center;
+}
+
+.card {
+    display: flex;
+}
+
+.user-icon {
+    margin-bottom: 50px;
+}
+
+.liked-list {
+    display: flex;
+}

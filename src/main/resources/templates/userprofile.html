@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Hello User!</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+</head>
+<body>
+<!--<h1><span th:text="${user.getFirst_name()}"></span> <span th:text="${user.getLast_name()}"></span></h1>-->
+<!--<img th:src="${user.getPhoto()}">-->
+<!--<div th:text="${user.getLogin()}"></div>-->
+<!--<div th:text="${user.getAge()}"></div>-->
+<!--<div th:text="${user.getSex()}"></div>-->
+<!--<form action="#" th:action="@{'/likedlist/' + ${user.getLogin()}}" method="post">-->
+    <!--<button type="submit">Friends</button>-->
+<!--</form>-->
+
+<!--<img th:src="${current.getPhoto()}">-->
+<!--<h3 th:text="${current.getFirst_name()}"></h3>-->
+
+<!--<form action="#" th:action="@{'/user/' + ${user.getLogin()}}" method="post">-->
+    <!--<input type="hidden" name="whomLikeId" th:value="${current.getId()}" >-->
+    <!--<button type="submit" name="like" value="like">Like</button>-->
+    <!--<button type="submit" name="like" value="dislike">DisLike</button>-->
+<!--</form>-->
+<div class="container card-container">
+    <h1><span th:text="${user.getFirst_name()}"></span> <span th:text="${user.getLast_name()}"></span></h1>
+    <div class="card" style="width: 12rem;">
+        <img th:src="${user.getPhoto()}" class="img-thumbnail">
+        <div class="card-body">
+            <h5 th:text="${user.getAge()}" class="card-title"></h5>
+        </div>
+        <form action="#" th:action="@{'/likedlist/' + ${user.getLogin()}}" method="post">
+        <button type="submit">Friends</button>
+        </form>
+    </div>
+    <div class="card card-profile" style="width: 20rem;">
+        <img th:src="${current.getPhoto()}" class="img-thumbnail">
+        <div class="card-body">
+            <h5 class="card-title"><span th:text="${current.getFirst_name()}"></span> <span th:text="${current.getAge()}"></span></h5>
+            <form action="#" th:action="@{'/user/' + ${user.getLogin()}}" method="post">
+                <input type="hidden" name="whomLikeId" th:value="${current.getId()}" >
+                <button type="submit" class="btn btn-primary" name="like" value="like">Like</button>
+                <button type="submit" class="btn btn-primary" name="like" value="dislike">Dislike</button>
+            </form>
+        </div>
+    </div>
+</div>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+</body>
+</html>
