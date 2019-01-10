@@ -40,7 +40,7 @@ public class UserController {
         return model;
     }
 
-    @PostMapping(name = "/user/{login}", params = {"like=like"})
+    @PostMapping(path= "/user/{login}", params = {"like=like"})
      public String likeUser(Model model, @RequestParam(value = "whomLikeId", required = false) Long whomLikedId) {
         Like like = new Like();
         like.setWhoLike(user.getId());
@@ -55,7 +55,7 @@ public class UserController {
         return "userprofile";
     }
 
-    @PostMapping(name = "/user/{login}", params = {"like=dislike"})
+    @PostMapping(path = "/user/{login}", params = {"like=dislike"})
     public String dislikeUser(Model model) {
         count++;
         if (count == userList.size()) {

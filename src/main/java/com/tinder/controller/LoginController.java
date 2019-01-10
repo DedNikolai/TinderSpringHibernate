@@ -13,7 +13,7 @@ public class LoginController {
     @Autowired
     private UserService userService;
 
-    @GetMapping(name = "/")
+    @GetMapping(path = "/")
     public ModelAndView loginPage() {
         ModelAndView model = new ModelAndView();
         User user = new User();
@@ -22,12 +22,12 @@ public class LoginController {
         return model;
     }
 
-    @PostMapping(name = "/", params = {"action=registration"})
+    @PostMapping(path = "/", params = {"action=registration"})
     public String registerForm() {
         return "redirect:/registration";
     }
 
-    @PostMapping(name = "/", params = {"action=login"})
+    @PostMapping(path = "/", params = {"action=login"})
     public String getUserProfile(@ModelAttribute User user, Model model) {
         User currentUser = userService.getUserByLogin(user.getLogin());
         if (currentUser != null && currentUser.getPassword().equals(user.getPassword())) {
